@@ -1,0 +1,85 @@
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> #================================================================
+> # Who:  Andre Staalstrom (ans@niva.no)
+> # When: 3.10.2019
+> # What: Tar modellresulatater fra NIVA Fjordmodell som er lagret
+> #       som CSV fil, og legger dette inn i NetCDF filer
+> #================================================================
+> # Disse pakkene må installeres (gjøres bare en gang)
+> #----------------------------------------------------------------
+> #install.packages("chron")
+> #install.packages("ncdf4")
+> #install.packages("RColorBrewer")
+> # Og så må bibliotekene lastes inn (gjøres hver gang)
+> library(chron)
+> library(RColorBrewer)
+> library(lattice)
+> library(ncdf4)
+> # Set working directory
+> workdir <- "C:\\Users\\ANS\\OneDrive - NIVA\\WinProgProjects\\NIVA_FjordModel\\NIVA_FjordModel_IO19_VAL02\\"
+> setwd(workdir)
+> getwd()
+[1] "C:/Users/ANS/OneDrive - NIVA/WinProgProjects/NIVA_FjordModel/NIVA_FjordModel_IO19_VAL02"
+> #================================================================
+> # Setup
+> #================================================================
+> # input
+> # xls <- "EUTRO.xlsx"  # not used
+> # output file names
+> nc    <- "nivafm_b1_BF.nc"
+> nc[2] <- "nivafm_b2_LY.nc"
+> nc[3] <- "nivafm_b3_VF.nc"
+> nc[4] <- "nivafm_b4_BB.nc"
+> nc[5] <- "nivafm_b5_BL.nc"
+> nc[6] <- "nivafm_b6_OH.nc"
+> nc[7] <- "nivafm_b7_BR.nc"
+> nc[8] <- "nivafm_b8_HF.nc"
+> nc[9] <- "nivafm_b9_SN.nc"
+> # # CTD stations in each basin
+> # lat    <- 59.72577   # Gp1
+> # lat[2] <- 59.84048   # Cj1
+> # lat[3] <- 59.89880   # Aq2
+> # lat[4] <- 59.82716   # Dm1
+> # lat[5] <- 59.88083   # Bl4
+> # lat[6] <- 59.87285   # Cq1
+> # lat[7] <- 59.88047   # Bn1
+> # lat[8] <- 59.78630   # Ep1
+> # lat[9] <- 59.81500   # Dk1
+>  
+> # lon    <- 10.72645    # Gp1
+> # lon[2] <- 10.50698    # Cj1
+> # lon[3] <- 10.74487    # Aq2
+> # lon[4] <- 10.61727    # Dm1
+> # lon[5] <- 10.56883    # Bl4
+> # lon[6] <- 10.73667    # Cq1
+> # lon[7] <- 10.64673    # Bn1
+> # lon[8] <- 10.72378    # Ep1
+> # lon[9] <- 10.56938    # Dk1
+> #================================================================
+> # Read CSV into R
+> #================================================================
+> NUM <- read.csv(file="EUTRO.csv", header=FALSE, sep=";", dec = ".")
+Error in file(file, "rt") : cannot open the connection
+Calls: read.csv -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'EUTRO.csv': No such file or directory
+Execution halted
