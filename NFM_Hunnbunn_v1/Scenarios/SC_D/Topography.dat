@@ -1,0 +1,54 @@
+BASINS
+# Created 25.06.2019 by Andre Staalstrom (ans@niva.no)
+# 1. Hunnebunn
+
+# Description of basin topography:
+# NAME
+# Length of coastline
+# Table:               Depth Area [*F]
+#                      ...
+# ends with            <Max depth> 0
+#                      END
+# The factor *F is multiplied with the area to get unit m2,
+# the same factor is used for all lines in the table
+
+# ==============================
+# ------------------ Basin 1
+HUNNBUNN
+# strandlinje  (m)
+4.8E3
+#  DYP,   AREAL   (FAKTOR I FORSTE LINJE GJELDER VIDERE NEDOVER)
+ 0   1.01   *1.0E6
+ 2   0.77
+ 4   0.57
+ 6   0.39
+ 8   0.25
+10   0.086
+11   0.010
+END
+
+# ==============================
+BOUNDARY
+# BARE NAVN PÅ YTRE BASSENG:
+HVALER
+
+
+# ==============================
+CONNECTIONS
+
+# 2 BASINNAMES WITH LENGTH OF BUFFERZONE (M), TRANSITIONZONE (M) AND
+#                           TIMECONSTANT (DAYS) FOR MIXING
+#                           BETWEEN BUFFERVOLUME AND THE MAIN BASINVOLUME:
+
+# ------------------- Thalbergsundet
+HUNNBUNN             500  200 0.5
+HVALER                500  200 0.5
+# Vindretning fra Hunnbunn til Hvaler:
+0.0
+# LISTE OVER DYP
+#          + TRANSPORTBREDDE
+#                + BREDDER PÅ BUFFEROMRÅDER i basseng 1 og 2 (M)
+       0     40    1000  1000
+       1     35    1000  1000
+       2      0       0     0
+END
